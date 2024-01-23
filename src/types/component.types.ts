@@ -1,5 +1,11 @@
 import {ImageContentFit, ImageContentPosition} from 'expo-image';
-import {ImageSize, Shape} from './common.types';
+import {
+  FontFamilyWeight,
+  FontSize,
+  ImageSize,
+  LineCount,
+  Shape,
+} from './common.types';
 
 export interface ImageProps {
   src: string;
@@ -10,4 +16,14 @@ export interface ImageProps {
   fit?: ImageContentFit;
   position?: ImageContentPosition;
   shape: Shape;
+}
+
+export interface TitleSubtitleProps {
+  title: string;
+  subTitle: string;
+  titleFontSize?: FontSize;
+  subtitleFontSize?: FontSize;
+  titleFontWeight?: FontFamilyWeight;
+  subTitleFontWeight?: FontFamilyWeight;
+  numberOfLines: LineCount;
 }

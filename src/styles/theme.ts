@@ -33,7 +33,7 @@ const theme: any = {
 const fonts = {
   regular: 'Axiforma-Regular',
   medium: 'Axiforma-Medium',
-  semibold: 'Axiforma-Semibold',
+  semibold: 'Axiforma-SemiBold',
   bold: 'Axiforma-Bold',
 };
 

@@ -1,18 +1,9 @@
 import React from 'react';
 import TextX from '~components/Textx';
-import {FontFamilyWeight, FontSize, LineCount} from '~types/common.types';
+import ViewX from '~components/ViewX';
+import {TitleSubtitleProps} from '~types/component.types';
 
-interface TitleSubtitleType {
-  title: string;
-  subTitle: string;
-  titleFontSize?: FontSize;
-  subtitleFontSize?: FontSize;
-  titleFontWeight?: FontFamilyWeight;
-  subTitleFontWeight?: FontFamilyWeight;
-  numberOfLines: LineCount;
-}
-
-const TitleSubtitle: React.FC<TitleSubtitleType> = ({
+const TitleSubtitle: React.FC<TitleSubtitleProps> = ({
   title,
   subTitle,
   titleFontSize = 'sm',
@@ -22,7 +13,7 @@ const TitleSubtitle: React.FC<TitleSubtitleType> = ({
   numberOfLines = 1,
 }) => {
   return (
-    <>
+    <ViewX>
       <TextX
         fontSize={titleFontSize}
         textConfig={{ellipsizeMode: 'tail', numberOfLines: numberOfLines}}
@@ -36,7 +27,7 @@ const TitleSubtitle: React.FC<TitleSubtitleType> = ({
         fontWeight={subTitleFontWeight}>
         {subTitle}
       </TextX>
-    </>
+    </ViewX>
   );
 };
 

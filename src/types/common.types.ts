@@ -45,3 +45,4 @@ export type LineCount = 1 | 2 | 3 | 4;
 export type Theme = 'dark' | 'light';
 export type TextColor = 'primary' | 'secondary' | 'accent';
 export type FontFamilyWeight = 'regular' | 'medium' | 'semibold' | 'bold';
+export type Orientation = 'vertical' | 'horizontal';
