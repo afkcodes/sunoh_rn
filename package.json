@@ -48,5 +48,15 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "expo": {
+    "autolinking": {
+      "exclude": [
+        "expo-keep-awake",
+        "expo-font",
+        "expo-constants",
+        "expo-file-system"
+      ]
+    }
   }
 }

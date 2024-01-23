@@ -1,15 +1,15 @@
-type ExtraSmallSize = "3xs" | "2xs";
-type BaseSize = "xs" | "sm" | "md" | "lg" | "xl";
-type ExtraLargeSize = "2xl" | "3xl" | "4xl";
-type ImageXtraLarge = "5xl" | "6xl";
+type ExtraSmallSize = '3xs' | '2xs';
+type BaseSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+type ExtraLargeSize = '2xl' | '3xl' | '4xl';
+type ImageXtraLarge = '5xl' | '6xl';
 
 export type Spacing = ExtraSmallSize | BaseSize | ExtraLargeSize;
-export type Radius = BaseSize | "full" | "none";
-export type FontSize = BaseSize | ExtraLargeSize | "base";
-export type FontWeight = "normal" | "medium" | "semibold" | "bold";
-export type Position = "left" | "right" | "top" | "bottom";
+export type Radius = BaseSize | 'full' | 'none';
+export type FontSize = ExtraSmallSize | BaseSize | ExtraLargeSize | 'base';
+export type FontWeight = 'normal' | 'medium' | 'semibold' | 'bold';
+export type Position = 'left' | 'right' | 'top' | 'bottom';
 
-export type TrackType = "hls" | "default";
+export type TrackType = 'hls' | 'default';
 
 export interface Response {
   message: string;
@@ -22,26 +22,26 @@ export type TileSize =
   | ExtraSmallSize
   | BaseSize
   | ExtraLargeSize
-  | "free"
-  | "2.5xs"
+  | 'free'
+  | '2.5xs'
   | ImageXtraLarge;
 export type ImageSize =
   | ExtraSmallSize
   | BaseSize
   | ExtraLargeSize
-  | "free"
-  | "2.5xs"
+  | 'free'
+  | '2.5xs'
   | ImageXtraLarge;
-export type Shape = "default" | "rounded_square" | "circle";
+export type Shape = 'default' | 'rounded_square' | 'circle';
 export type FitStrategy =
-  | "default"
-  | "fill"
-  | "contain"
-  | "cover"
-  | "scale_down";
+  | 'default'
+  | 'fill'
+  | 'contain'
+  | 'cover'
+  | 'scale_down';
 
-export type ArrangeMode = "single" | "multi";
+export type ArrangeMode = 'single' | 'multi';
 export type LineCount = 1 | 2 | 3 | 4;
-export type Theme = "dark" | "light";
-export type TextColor = "primary" | "secondary" | "accent";
-export type FontFamilyWeight = "regular" | "medium" | "semibold" | "bold";
+export type Theme = 'dark' | 'light';
+export type TextColor = 'primary' | 'secondary' | 'accent';
+export type FontFamilyWeight = 'regular' | 'medium' | 'semibold' | 'bold';

@@ -1,25 +1,34 @@
-import React from "react";
-import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
-import { fonts, theme } from "~styles/theme";
-import { FontFamilyWeight, TextColor, Theme } from "~types/common.types";
+import React from 'react';
+import {StyleSheet, Text, TextProps, TextStyle} from 'react-native';
+import {fontSizeStyle} from '~styles/base';
+import {fonts, theme} from '~styles/theme';
+import {
+  FontFamilyWeight,
+  FontSize,
+  TextColor,
+  Theme,
+} from '~types/common.types';
 
 interface TextXProps {
   children: React.ReactNode | undefined;
   color?: TextColor;
   fontWeight?: FontFamilyWeight;
   textConfig?: TextProps;
+  fontSize?: FontSize;
 }
 
 const getStyles = (
-  currentTheme: Theme = "dark",
-  color: TextColor = "primary",
-  family: FontFamilyWeight = "regular",
-  rest: TextStyle
+  currentTheme: Theme = 'dark',
+  color: TextColor = 'primary',
+  family: FontFamilyWeight = 'regular',
+  fontSize: FontSize = 'base',
+  rest: TextStyle,
 ) => {
   const styles = StyleSheet.create({
     text: {
       color: theme[currentTheme].text[color],
       fontFamily: fonts[family],
+      fontSize: fontSizeStyle[fontSize],
       ...rest,
     },
   });
@@ -27,15 +36,16 @@ const getStyles = (
   return styles;
 };
 
-const TextX: React.FC<TextXProps> = (props) => {
+const TextX: React.FC<TextXProps> = props => {
   const {
     children,
-    color = "primary",
-    fontWeight = "regular",
+    color = 'primary',
+    fontWeight = 'regular',
     textConfig,
+    fontSize = 'base',
     ...rest
   } = props;
-  const styles = getStyles("dark", color, fontWeight, rest);
+  const styles = getStyles('dark', color, fontWeight, fontSize, rest);
   return <Text style={styles.text}>{children}</Text>;
 };
 

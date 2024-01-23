@@ -1,6 +1,6 @@
-import { colors } from "./colors";
+import {colors} from './colors';
 
-const theme = {
+const theme: any = {
   dark: {
     bg: {
       primary: colors.black[900],
@@ -19,7 +19,7 @@ const theme = {
       secondary: colors.teal[500],
       warning: colors.yellow[500],
       danger: colors.red[500],
-      outline: "transparent",
+      outline: 'transparent',
     },
     error: colors.red[600],
     warning: colors.yellow[500],
@@ -29,11 +29,12 @@ const theme = {
     icon: colors.blue[500],
   },
 };
+
 const fonts = {
-  regular: "Axiforma-Regular",
-  medium: "Axiforma-Medium",
-  semibold: "Axiforma-Semibold",
-  bold: "Axiforma-Bold",
+  regular: 'Axiforma-Regular',
+  medium: 'Axiforma-Medium',
+  semibold: 'Axiforma-Semibold',
+  bold: 'Axiforma-Bold',
 };
 
-export { fonts, theme };
+export {fonts, theme};
