@@ -5,8 +5,9 @@
  * @format
  */
 
-import React from 'react';
+import {Image} from 'expo-image';
 import type {PropsWithChildren} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -33,6 +34,12 @@ function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
+      <Image
+        style={{height: 120, width: 120}}
+        source="https://picsum.photos/seed/696/3000/2000"
+        contentFit="cover"
+        transition={1000}
+      />
       <Text
         style={[
           styles.sectionTitle,
