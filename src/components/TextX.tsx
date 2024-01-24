@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, TextProps, TextStyle} from 'react-native';
-import {fontSizeStyle} from '~styles/base';
-import {fonts, theme} from '~styles/theme';
-import {Color, FontFamilyWeight, FontSize, Theme} from '~types/common.types';
+import { StyleSheet, Text, TextProps, TextStyle } from 'react-native';
+import { fontSizeStyle } from '~styles/base';
+import { fonts, theme } from '~styles/theme';
+import { Color, FontFamilyWeight, FontSize, Theme } from '~types/common.types';
 
 interface TextXProps {
   children: React.ReactNode | undefined;
@@ -17,21 +17,21 @@ const getStyles = (
   color: Color = 'primary',
   family: FontFamilyWeight = 'regular',
   fontSize: FontSize = 'base',
-  rest: TextStyle,
+  rest: TextStyle
 ) => {
   const styles = StyleSheet.create({
     text: {
       color: theme[currentTheme].text[color],
       fontFamily: fonts[family],
       fontSize: fontSizeStyle[fontSize],
-      ...rest,
-    },
+      ...rest
+    }
   });
 
   return styles;
 };
 
-const TextX: React.FC<TextXProps> = props => {
+const TextX: React.FC<TextXProps> = (props) => {
   const {
     children,
     color = 'primary',

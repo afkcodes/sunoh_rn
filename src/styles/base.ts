@@ -1,6 +1,6 @@
-import {FontSize, Radius, Spacing} from '~types/common.types';
+import { FontSize, Radius, Spacing } from '~types/common.types';
 
-const fontSizeStyle: {[key in FontSize]: number} = {
+const fontSizeStyle: { [key in FontSize]: number } = {
   '3xs': 6,
   '2xs': 8,
   xs: 12,
@@ -11,10 +11,10 @@ const fontSizeStyle: {[key in FontSize]: number} = {
   xl: 22,
   '2xl': 24,
   '3xl': 28,
-  '4xl': 32,
+  '4xl': 32
 };
 
-const spacing: {[key in Spacing]: number} = {
+const spacing: { [key in Spacing]: number } = {
   none: 0,
   '2xs': 2,
   xs: 4,
@@ -26,10 +26,10 @@ const spacing: {[key in Spacing]: number} = {
   '3xl': 28,
   '4xl': 32,
   scroll: 100,
-  '3xs': 1,
+  '3xs': 1
 };
 
-export const borderRadius: {[key in Radius]: number} = {
+export const borderRadius: { [key in Radius]: number } = {
   none: 0,
   xs: 2,
   sm: 4,
@@ -41,7 +41,7 @@ export const borderRadius: {[key in Radius]: number} = {
   '4xl': 16,
   '5xl': 18,
   '6xl': 24,
-  full: 100,
+  full: 100
 };
 
-export {fontSizeStyle, spacing};
+export { fontSizeStyle, spacing };

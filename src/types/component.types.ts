@@ -1,13 +1,6 @@
-import {ImageContentFit, ImageContentPosition} from 'expo-image';
-import {PressableProps, TextProps} from 'react-native';
-import {
-  Color,
-  FontFamilyWeight,
-  FontSize,
-  ImageSize,
-  LineCount,
-  Shape,
-} from './common.types';
+import { ImageContentFit, ImageContentPosition } from 'expo-image';
+import { PressableProps, TextProps } from 'react-native';
+import { Color, FontFamilyWeight, FontSize, ImageSize, LineCount, Shape } from './common.types';
 
 export interface ImageProps {
   src: string;

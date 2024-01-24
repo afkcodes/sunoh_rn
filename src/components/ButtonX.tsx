@@ -1,12 +1,12 @@
-import {TextProps} from 'react-native';
-import {borderRadius, spacing} from '~styles/base';
+import { TextProps } from 'react-native';
+import { borderRadius, spacing } from '~styles/base';
 import {
   ButtonColors,
   Color,
   FontFamilyWeight,
   FontSize,
   Radius,
-  Spacing,
+  Spacing
 } from '~types/common.types';
 import TextX from './TextX';
 import TouchableX from './TouchableX';
@@ -41,7 +41,7 @@ const ButtonX: React.FC<ButtonXProps> = ({
   type = 'default',
   onPress = () => {
     console.log('pressed button');
-  },
+  }
 }) => {
   const paddingHorizontal = spacing[styleConfig.gutterX];
   const paddingVertical = spacing[styleConfig.gutterY];
@@ -51,12 +51,14 @@ const ButtonX: React.FC<ButtonXProps> = ({
       onPress={onPress}
       backgroundColor={styleConfig.bgColor}
       activeOpacity={0.9}
-      style={{paddingHorizontal, paddingVertical, borderRadius: radius}}>
+      style={{ paddingHorizontal, paddingVertical, borderRadius: radius }}
+    >
       {type === 'default' ? (
         <TextX
           color={textConfig.color}
           fontSize={textConfig.fontSize}
-          fontWeight={textConfig.fontWeight}>
+          fontWeight={textConfig.fontWeight}
+        >
           {textConfig.text}
         </TextX>
       ) : null}

@@ -1,7 +1,7 @@
 import React from 'react';
-import {Pressable, PressableProps, StyleSheet, ViewStyle} from 'react-native';
-import {theme} from '~styles/theme';
-import {ButtonColors, Theme} from '~types/common.types';
+import { Pressable, PressableProps, StyleSheet, ViewStyle } from 'react-native';
+import { theme } from '~styles/theme';
+import { ButtonColors, Theme } from '~types/common.types';
 
 interface PressableXProps {
   children: React.ReactNode;
@@ -9,16 +9,12 @@ interface PressableXProps {
   pressableConfig: PressableProps;
 }
 
-const getStyles = (
-  currentTheme: Theme = 'dark',
-  backgroundColor: string,
-  rest: ViewStyle,
-) => {
+const getStyles = (currentTheme: Theme = 'dark', backgroundColor: string, rest: ViewStyle) => {
   const styles = StyleSheet.create({
     pressableStyles: {
       backgroundColor: theme[currentTheme].button[backgroundColor],
-      ...rest,
-    },
+      ...rest
+    }
   });
 
   return styles;

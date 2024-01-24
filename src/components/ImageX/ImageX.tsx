@@ -1,7 +1,7 @@
-import {Image} from 'expo-image';
+import { Image } from 'expo-image';
 import React from 'react';
-import {ImageProps} from '~types/component.types';
-import {imageShape, imageSize} from './ImageX.styles';
+import { ImageProps } from '~types/component.types';
+import { imageShape, imageSize } from './ImageX.styles';
 
 const ImageX: React.FC<ImageProps> = ({
   size,
@@ -11,13 +11,13 @@ const ImageX: React.FC<ImageProps> = ({
   onError,
   onLoad,
   position,
-  shape,
+  shape
 }) => {
-  const {height, width} = imageSize[size];
+  const { height, width } = imageSize[size];
   const borderRadius = imageShape[shape];
   return (
     <Image
-      style={{height: height, width: width, borderRadius: borderRadius}}
+      style={{ height: height, width: width, borderRadius: borderRadius }}
       source={src}
       contentFit={fit}
       transition={300}

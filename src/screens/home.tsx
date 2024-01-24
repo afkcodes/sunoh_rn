@@ -1,13 +1,13 @@
-import {NavigationContext} from 'navigation-react';
-import {useContext} from 'react';
+import { NavigationContext } from 'navigation-react';
+import { useContext } from 'react';
 import ButtonX from '~components/ButtonX';
 import Tile from '~components/Tile';
 import ViewX from '~components/ViewX';
 
 const Home = () => {
-  const {stateNavigator} = useContext(NavigationContext);
+  const { stateNavigator } = useContext(NavigationContext);
   return (
-    <ViewX flex={1} justifyContent="center" alignItems="center">
+    <ViewX flex={1} justifyContent='center' alignItems='center'>
       <Tile
         data={{}}
         config={{}}
@@ -19,7 +19,7 @@ const Home = () => {
             fit: 'cover',
             position: 'top',
             alt: '',
-            shape: 'default',
+            shape: 'default'
           },
           titleSubtitleConfig: {
             title: 'Papa Meri Jaan',
@@ -27,8 +27,8 @@ const Home = () => {
             numberOfLines: 1,
             titleFontSize: 'sm',
             titleFontWeight: 'medium',
-            subtitleFontSize: 'xs',
-          },
+            subtitleFontSize: 'xs'
+          }
         }}
       />
       <ButtonX
@@ -36,15 +36,15 @@ const Home = () => {
           text: 'Hello Button',
           color: 'primary',
           fontSize: 'lg',
-          fontWeight: 'medium',
+          fontWeight: 'medium'
         }}
         styleConfig={{
           bgColor: 'primary',
           gutterX: 'md',
           gutterY: 'lg',
-          radius: 'sm',
+          radius: 'sm'
         }}
-        type="default"
+        type='default'
         onPress={() => {
           stateNavigator.navigate('search');
         }}

@@ -1,12 +1,7 @@
-import React, {ReactNode} from 'react';
-import {
-  StyleSheet,
-  TouchableOpacity,
-  TouchableOpacityProps,
-  ViewStyle,
-} from 'react-native';
-import {theme} from '~styles/theme';
-import {Theme} from '~types/common.types';
+import React, { ReactNode } from 'react';
+import { StyleSheet, TouchableOpacity, TouchableOpacityProps, ViewStyle } from 'react-native';
+import { theme } from '~styles/theme';
+import { Theme } from '~types/common.types';
 
 interface CustomTouchableOpacityProps extends TouchableOpacityProps {
   display?: string;
@@ -16,16 +11,12 @@ interface CustomTouchableOpacityProps extends TouchableOpacityProps {
   children?: ReactNode;
 }
 
-const getStyles = (
-  currentTheme: Theme = 'dark',
-  backgroundColor: string,
-  rest: ViewStyle,
-) => {
+const getStyles = (currentTheme: Theme = 'dark', backgroundColor: string, rest: ViewStyle) => {
   return StyleSheet.create({
     pressableStyles: {
       backgroundColor: theme[currentTheme].button[backgroundColor],
-      ...rest,
-    },
+      ...rest
+    }
   });
 };
 
@@ -41,10 +32,7 @@ const CustomTouchableOpacity: React.FC<CustomTouchableOpacityProps> = ({
   const styles = getStyles('dark', backgroundColor, style);
 
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={styles.pressableStyles}
-      {...restProps}>
+    <TouchableOpacity onPress={onPress} style={styles.pressableStyles} {...restProps}>
       {children}
     </TouchableOpacity>
   );
