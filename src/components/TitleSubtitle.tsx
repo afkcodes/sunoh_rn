@@ -1,5 +1,5 @@
 import React from 'react';
-import TextX from '~components/Textx';
+import TextX from '~components/TextX';
 import ViewX from '~components/ViewX';
 import {TitleSubtitleProps} from '~types/component.types';
 

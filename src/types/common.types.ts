@@ -3,8 +3,18 @@ type BaseSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 type ExtraLargeSize = '2xl' | '3xl' | '4xl';
 type ImageXtraLarge = '5xl' | '6xl';
 
-export type Spacing = ExtraSmallSize | BaseSize | ExtraLargeSize;
-export type Radius = BaseSize | 'full' | 'none';
+export type Spacing =
+  | ExtraSmallSize
+  | BaseSize
+  | ExtraLargeSize
+  | 'scroll'
+  | 'none';
+export type Radius =
+  | BaseSize
+  | ExtraLargeSize
+  | ImageXtraLarge
+  | 'full'
+  | 'none';
 export type FontSize = ExtraSmallSize | BaseSize | ExtraLargeSize | 'base';
 export type FontWeight = 'normal' | 'medium' | 'semibold' | 'bold';
 export type Position = 'left' | 'right' | 'top' | 'bottom';
@@ -43,6 +53,14 @@ export type FitStrategy =
 export type ArrangeMode = 'single' | 'multi';
 export type LineCount = 1 | 2 | 3 | 4;
 export type Theme = 'dark' | 'light';
-export type TextColor = 'primary' | 'secondary' | 'accent';
+export type Color = 'primary' | 'secondary' | 'accent';
 export type FontFamilyWeight = 'regular' | 'medium' | 'semibold' | 'bold';
 export type Orientation = 'vertical' | 'horizontal';
+
+export type ButtonColors =
+  | Color
+  | 'primary'
+  | 'secondary'
+  | 'outline'
+  | 'warning'
+  | 'danger';

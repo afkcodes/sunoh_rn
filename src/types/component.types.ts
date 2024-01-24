@@ -1,5 +1,7 @@
 import {ImageContentFit, ImageContentPosition} from 'expo-image';
+import {PressableProps, TextProps} from 'react-native';
 import {
+  Color,
   FontFamilyWeight,
   FontSize,
   ImageSize,
@@ -26,4 +28,18 @@ export interface TitleSubtitleProps {
   titleFontWeight?: FontFamilyWeight;
   subTitleFontWeight?: FontFamilyWeight;
   numberOfLines: LineCount;
+}
+
+export interface TextXProps {
+  children: React.ReactNode | undefined;
+  color?: Color;
+  fontWeight?: FontFamilyWeight;
+  textConfig?: TextProps;
+  fontSize?: FontSize;
+}
+
+export interface PressableXProps {
+  children: React.ReactNode;
+  bgColor: Color;
+  pressableConfig: PressableProps;
 }

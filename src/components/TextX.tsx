@@ -2,16 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, TextProps, TextStyle} from 'react-native';
 import {fontSizeStyle} from '~styles/base';
 import {fonts, theme} from '~styles/theme';
-import {
-  FontFamilyWeight,
-  FontSize,
-  TextColor,
-  Theme,
-} from '~types/common.types';
+import {Color, FontFamilyWeight, FontSize, Theme} from '~types/common.types';
 
 interface TextXProps {
   children: React.ReactNode | undefined;
-  color?: TextColor;
+  color?: Color;
   fontWeight?: FontFamilyWeight;
   textConfig?: TextProps;
   fontSize?: FontSize;
@@ -19,7 +14,7 @@ interface TextXProps {
 
 const getStyles = (
   currentTheme: Theme = 'dark',
-  color: TextColor = 'primary',
+  color: Color = 'primary',
   family: FontFamilyWeight = 'regular',
   fontSize: FontSize = 'base',
   rest: TextStyle,
