@@ -24,10 +24,10 @@ const theme: any = {
     },
     error: colors.red[600],
     warning: colors.yellow[500],
-  },
-  navigation: {
-    background: colors.black[700],
-    icon: colors.blue[500],
+    navigation: {
+      background: colors.black[700],
+      icon: colors.blue[500],
+    },
   },
 };
 
