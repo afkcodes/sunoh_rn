@@ -1,5 +1,6 @@
 import { TextProps } from 'react-native';
 import { borderRadius, spacing } from '~styles/base';
+import { theme } from '~styles/theme';
 import {
   ButtonColors,
   Color,
@@ -8,6 +9,8 @@ import {
   Radius,
   Spacing
 } from '~types/common.types';
+import { SVG } from '~types/component.types';
+import SVGIcon from './SVGIcon';
 import TextX from './TextX';
 import TouchableX from './TouchableX';
 
@@ -21,11 +24,11 @@ interface ButtonXProps {
     bgColor: ButtonColors;
   };
   iconConfig?: {
-    icon: React.ReactNode;
+    icon: SVG;
     size: number;
-    color: string;
+    fillColor: string;
   };
-  textConfig: {
+  textConfig?: {
     text: string;
     color?: Color;
     fontWeight?: FontFamilyWeight;
@@ -37,7 +40,11 @@ interface ButtonXProps {
 const ButtonX: React.FC<ButtonXProps> = ({
   textConfig,
   styleConfig,
-  iconConfig,
+  iconConfig = {
+    icon: 'HEART',
+    size: 24,
+    fillColor: theme.dark.text.primary
+  },
   type = 'default',
   onPress = () => {
     console.log('pressed button');
@@ -53,7 +60,7 @@ const ButtonX: React.FC<ButtonXProps> = ({
       activeOpacity={0.9}
       style={{ paddingHorizontal, paddingVertical, borderRadius: radius }}
     >
-      {type === 'default' ? (
+      {type === 'default' && textConfig ? (
         <TextX
           color={textConfig.color}
           fontSize={textConfig.fontSize}
@@ -62,7 +69,14 @@ const ButtonX: React.FC<ButtonXProps> = ({
           {textConfig.text}
         </TextX>
       ) : null}
-      {type === 'icon' ? <TextX>icon</TextX> : null}
+      {type === 'icon' ? (
+        <SVGIcon
+          icon={iconConfig.icon}
+          height={iconConfig.size}
+          width={iconConfig.size}
+          fill={iconConfig.fillColor}
+        />
+      ) : null}
     </TouchableX>
   );
 };

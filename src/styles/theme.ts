@@ -7,7 +7,8 @@ const theme: any = {
       secondary: colors.black[700],
       tertiary: colors.material[800],
       accent: colors.red[600],
-      card: colors.black[500]
+      card: colors.black[500],
+      transparent: 'transparent'
     },
     text: {
       primary: colors.white[500],

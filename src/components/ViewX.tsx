@@ -11,7 +11,7 @@ interface ViewXProps {
 const getStyles = (currentTheme: Theme, rest: ViewStyle) => {
   const styles = StyleSheet.create({
     view: {
-      backgroundColor: theme[currentTheme].bg.primary,
+      backgroundColor: theme[currentTheme].bg.transparent,
       ...rest
     }
   });

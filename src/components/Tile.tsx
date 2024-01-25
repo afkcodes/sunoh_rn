@@ -20,7 +20,7 @@ const Tile: React.FC<TileProps> = ({ styleConfig }) => {
   return (
     <ViewX
       display='flex'
-      gap={isHorizontal ? 8 : 6}
+      gap={isHorizontal ? 10 : 6}
       flexDirection={isHorizontal ? 'row' : 'column'}
       justifyContent={isHorizontal ? 'flex-start' : 'center'}
       alignItems={isHorizontal ? 'center' : 'flex-start'}

@@ -36,3 +36,27 @@ export interface PressableXProps {
   bgColor: Color;
   pressableConfig: PressableProps;
 }
+
+export type SVG =
+  | 'SEARCH'
+  | 'HEART'
+  | 'ARROW_RIGHT'
+  | 'PLAY'
+  | 'STOP'
+  | 'ARROW_DOWN'
+  | 'PLAY_CIRCLE'
+  | 'STOP_CIRCLE'
+  | 'MORE'
+  | 'PREV'
+  | 'NEXT'
+  | 'FORWARD'
+  | 'SHARE'
+  | 'SLEEP'
+  | 'HEART_FILLED'
+  | 'BACKWARD'
+  | 'NEW'
+  | 'TRENDING'
+  | 'HEADPHONE'
+  | 'HISTORY'
+  | 'CLOSE'
+  | 'RECENT_SEARCH';

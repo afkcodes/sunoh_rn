@@ -1,27 +1,20 @@
-import {StateNavigator} from 'navigation';
+import { StateNavigator } from 'navigation';
 import Home from '~screens/home';
 import Search from '~screens/search';
 import Settings from '~screens/settings';
-import {fonts} from '~styles/theme';
+import { fonts } from '~styles/theme';
 
 const homeNavigator = new StateNavigator([
-  {key: 'home'},
-  {key: 'viewAll', trackCrumbTrail: true},
-  {key: 'search', trackCrumbTrail: true},
+  { key: 'home' },
+  { key: 'viewAll', trackCrumbTrail: true },
+  { key: 'search', trackCrumbTrail: true }
 ]);
 
-const tabNavigator = new StateNavigator([
-  {key: 'tabs'},
-  {key: 'player', trackCrumbTrail: true},
-]);
+const tabNavigator = new StateNavigator([{ key: 'tabs' }, { key: 'home' }]);
 
-const searchNavigator = new StateNavigator([
-  {key: 'search', trackCrumbTrail: true},
-]);
+const searchNavigator = new StateNavigator([{ key: 'search', trackCrumbTrail: true }]);
 
-const settingsNavigator = new StateNavigator([
-  {key: 'settings', trackCrumbTrail: true},
-]);
+const settingsNavigator = new StateNavigator([{ key: 'settings', trackCrumbTrail: true }]);
 
 const tabs = [
   {
@@ -32,9 +25,9 @@ const tabs = [
     family: fonts.medium,
     navigatorState: homeNavigator,
     scenes: [
-      {key: 'home', component: Home},
-      {key: 'search', component: Search},
-    ],
+      { key: 'home', component: Home },
+      { key: 'search', component: Search }
+    ]
   },
   {
     id: 'search',
@@ -44,9 +37,9 @@ const tabs = [
     family: fonts.medium,
     navigatorState: searchNavigator,
     scenes: [
-      {key: 'search', component: Search},
-      {key: 'home', component: Home},
-    ],
+      { key: 'search', component: Search },
+      { key: 'home', component: Home }
+    ]
   },
   {
     id: 'settings',
@@ -56,10 +49,10 @@ const tabs = [
     family: fonts.medium,
     navigatorState: settingsNavigator,
     scenes: [
-      {key: 'settings', component: Settings},
-      {key: 'search', component: Search},
-    ],
-  },
+      { key: 'settings', component: Settings },
+      { key: 'search', component: Search }
+    ]
+  }
 ];
 
-export {homeNavigator, searchNavigator, tabNavigator, tabs};
+export { homeNavigator, searchNavigator, tabNavigator, tabs };

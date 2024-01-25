@@ -1,5 +1,6 @@
 import { NavigationContext } from 'navigation-react';
 import { useContext } from 'react';
+import AudioListItem from '~components/AudioListItem';
 import ButtonX from '~components/ButtonX';
 import Tile from '~components/Tile';
 import ViewX from '~components/ViewX';
@@ -49,6 +50,9 @@ const Home = () => {
           stateNavigator.navigate('search');
         }}
       />
+      {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+        <AudioListItem key={item} />
+      ))}
     </ViewX>
   );
 };
