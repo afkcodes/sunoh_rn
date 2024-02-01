@@ -1,16 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, TextProps, TextStyle } from 'react-native';
+import { StyleSheet, Text, TextStyle } from 'react-native';
 import { fontSizeStyle } from '~styles/base';
 import { fonts, theme } from '~styles/theme';
 import { Color, FontFamilyWeight, FontSize, Theme } from '~types/common.types';
-
-interface TextXProps {
-  children: React.ReactNode | undefined;
-  color?: Color;
-  fontWeight?: FontFamilyWeight;
-  textConfig?: TextProps;
-  fontSize?: FontSize;
-}
+import { TextXProps } from '~types/component.types';
 
 const getStyles = (
   currentTheme: Theme = 'dark',

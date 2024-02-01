@@ -1,6 +1,16 @@
 import { ImageContentFit, ImageContentPosition } from 'expo-image';
 import { PressableProps, TextProps } from 'react-native';
-import { Color, FontFamilyWeight, FontSize, ImageSize, LineCount, Shape } from './common.types';
+import {
+  ButtonColors,
+  Color,
+  FontFamilyWeight,
+  FontSize,
+  ImageSize,
+  LineCount,
+  Radius,
+  Shape,
+  Spacing
+} from './common.types';
 
 export interface ImageProps {
   src: string;
@@ -60,3 +70,34 @@ export type SVG =
   | 'HISTORY'
   | 'CLOSE'
   | 'RECENT_SEARCH';
+
+export interface ButtonXProps {
+  type: 'icon' | 'default';
+  onPress: () => void;
+  styleConfig: {
+    gutterX: Spacing;
+    gutterY: Spacing;
+    radius: Radius;
+    bgColor: ButtonColors;
+  };
+  iconConfig?: {
+    icon: SVG;
+    size: number;
+    fillColor: string;
+  };
+  textConfig?: {
+    text: string;
+    color?: Color;
+    fontWeight?: FontFamilyWeight;
+    textConfig?: TextProps;
+    fontSize?: FontSize;
+  };
+}
+
+export interface HeadingTextConfig extends Omit<TextXProps, 'children'> {
+  text: string;
+}
+export interface SectionHeaderProps {
+  headingConfig: HeadingTextConfig;
+  actionButtonConfig: ButtonXProps;
+}

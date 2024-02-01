@@ -1,14 +1,15 @@
 import { NavigationContext } from 'navigation-react';
 import { useContext } from 'react';
+import { ScrollView } from 'react-native';
 import AudioListItem from '~components/AudioListItem';
 import ButtonX from '~components/ButtonX';
+import SectionHeader from '~components/SectionHeader';
 import Tile from '~components/Tile';
-import ViewX from '~components/ViewX';
 
 const Home = () => {
   const { stateNavigator } = useContext(NavigationContext);
   return (
-    <ViewX flex={1} justifyContent='center' alignItems='center'>
+    <ScrollView style={{ flex: 1, paddingHorizontal: 8 }}>
       <Tile
         data={{}}
         config={{}}
@@ -50,10 +51,29 @@ const Home = () => {
           stateNavigator.navigate('search');
         }}
       />
-      {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+      <SectionHeader
+        headingConfig={{
+          text: 'Trending Now',
+          color: 'accent',
+          fontSize: 'md',
+          fontWeight: 'semibold'
+        }}
+        actionButtonConfig={{
+          onPress: () => {},
+          textConfig: {
+            text: 'VIEW ALL',
+            fontSize: 'xs',
+            fontWeight: 'semibold',
+            color: 'secondary'
+          },
+          styleConfig: { bgColor: 'outline', gutterX: 'sm', gutterY: 'sm', radius: 'none' },
+          type: 'default'
+        }}
+      />
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
         <AudioListItem key={item} />
       ))}
-    </ViewX>
+    </ScrollView>
   );
 };
 

@@ -1,41 +1,9 @@
-import { TextProps } from 'react-native';
 import { borderRadius, spacing } from '~styles/base';
 import { theme } from '~styles/theme';
-import {
-  ButtonColors,
-  Color,
-  FontFamilyWeight,
-  FontSize,
-  Radius,
-  Spacing
-} from '~types/common.types';
-import { SVG } from '~types/component.types';
+import { ButtonXProps } from '~types/component.types';
 import SVGIcon from './SVGIcon';
 import TextX from './TextX';
 import TouchableX from './TouchableX';
-
-interface ButtonXProps {
-  type: 'icon' | 'default';
-  onPress: () => void;
-  styleConfig: {
-    gutterX: Spacing;
-    gutterY: Spacing;
-    radius: Radius;
-    bgColor: ButtonColors;
-  };
-  iconConfig?: {
-    icon: SVG;
-    size: number;
-    fillColor: string;
-  };
-  textConfig?: {
-    text: string;
-    color?: Color;
-    fontWeight?: FontFamilyWeight;
-    textConfig?: TextProps;
-    fontSize?: FontSize;
-  };
-}
 
 const ButtonX: React.FC<ButtonXProps> = ({
   textConfig,
