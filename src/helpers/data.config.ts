@@ -27,3 +27,11 @@ export const CITY_RADIO_TILE_CONFIG = {
   dominantColor: 'dominantColor',
   blurHash: 'blurHash'
 };
+
+export const HOME_CONFIG = {
+  id: 'id',
+  title: 'title',
+  subtitle: 'subtitle',
+  image: 'image',
+  dominantColor: ''
+};

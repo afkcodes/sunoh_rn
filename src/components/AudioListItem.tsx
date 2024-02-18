@@ -1,40 +1,35 @@
 import { theme } from '~styles/theme';
+import { TileProps } from '~types/component.types';
 import ButtonX from './ButtonX';
+import PressableX from './PressableX';
 import Tile from './Tile';
-import ViewX from './ViewX';
 
-const AudioListItem = () => {
+const AudioListItem: React.FC<TileProps> = ({
+  imageConfig,
+  styleConfig,
+  titleSubtitleConfig,
+  onPress,
+  config,
+  data
+}) => {
   return (
-    <ViewX
+    <PressableX
       width='100%'
       padding={3}
       display='flex'
       flexDirection='row'
       justifyContent='space-between'
       alignItems='center'
+      pressableConfig={{ onPress }}
+      bgColor='unstyled'
     >
       <Tile
-        data={{}}
-        config={{}}
-        styleConfig={{
-          orientation: 'horizontal',
-          imageConfig: {
-            size: '2xs',
-            src: 'https://m.media-amazon.com/images/M/MV5BNGViM2M4NmUtMmNkNy00MTQ5LTk5MDYtNmNhODAzODkwOTJlXkEyXkFqcGdeQXVyMTY1NDY4NTIw._V1_.jpg',
-            fit: 'cover',
-            position: 'top',
-            alt: '',
-            shape: 'rounded_square'
-          },
-          titleSubtitleConfig: {
-            title: 'Papa Meri Jaan',
-            subTitle: 'Animal',
-            numberOfLines: 1,
-            titleFontSize: 'sm',
-            titleFontWeight: 'medium',
-            subtitleFontSize: 'xs'
-          }
-        }}
+        data={data}
+        config={config}
+        imageConfig={imageConfig}
+        titleSubtitleConfig={titleSubtitleConfig}
+        styleConfig={styleConfig}
+        onPress={onPress}
       />
       <ButtonX
         type='icon'
@@ -44,7 +39,7 @@ const AudioListItem = () => {
           console.log('more');
         }}
       />
-    </ViewX>
+    </PressableX>
   );
 };
 

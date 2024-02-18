@@ -1,12 +1,14 @@
 import { ImageContentFit, ImageContentPosition } from 'expo-image';
 import { PressableProps, TextProps } from 'react-native';
 import {
+  Alignment,
   ButtonColors,
   Color,
   FontFamilyWeight,
   FontSize,
   ImageSize,
   LineCount,
+  Orientation,
   Radius,
   Shape,
   Spacing
@@ -30,7 +32,8 @@ export interface TitleSubtitleProps {
   subtitleFontSize?: FontSize;
   titleFontWeight?: FontFamilyWeight;
   subTitleFontWeight?: FontFamilyWeight;
-  numberOfLines: LineCount;
+  numberOfLines?: LineCount;
+  align?: Alignment;
 }
 
 export interface TextXProps {
@@ -100,4 +103,42 @@ export interface HeadingTextConfig extends Omit<TextXProps, 'children'> {
 export interface SectionHeaderProps {
   headingConfig: HeadingTextConfig;
   actionButtonConfig: ButtonXProps;
+}
+
+export interface TileProps {
+  data: any;
+  config: any;
+  styleConfig: {
+    orientation: Orientation;
+    gutterLeft?: Spacing;
+    gutterRight?: Spacing;
+    imageStyleConfig: {
+      size: ImageSize;
+      shape: Shape;
+      fit?: ImageContentFit;
+      position?: ImageContentPosition;
+    };
+    labelStyeConfig: {
+      titleFontSize?: FontSize;
+      subtitleFontSize?: FontSize;
+      titleFontWeight?: FontFamilyWeight;
+      subTitleFontWeight?: FontFamilyWeight;
+      numberOfLines?: LineCount;
+    };
+  };
+  onPress: (item?: any) => void;
+}
+
+export interface TileContainerProps {
+  tileConfig: Omit<TileProps, 'data' | 'config'>;
+  data: any;
+  config: any;
+  onPress: (item?: any) => void;
+}
+
+export interface AudioListContainerProps {
+  audioItemConfig: Omit<TileProps, 'data' | 'config'>;
+  data: any;
+  config: any;
+  onPress: (item?: any) => void;
 }

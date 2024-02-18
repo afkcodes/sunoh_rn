@@ -5,7 +5,13 @@ import ViewX from './ViewX';
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ headingConfig, actionButtonConfig }) => {
   return (
-    <ViewX display='flex' flexDirection='row' justifyContent='space-between' alignItems='center'>
+    <ViewX
+      display='flex'
+      flexDirection='row'
+      justifyContent='space-between'
+      alignItems='center'
+      paddingHorizontal={8}
+    >
       {headingConfig ? (
         <TextX fontSize={headingConfig.fontSize} fontWeight={headingConfig.fontWeight}>
           {headingConfig.text}

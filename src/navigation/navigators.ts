@@ -1,4 +1,5 @@
 import { StateNavigator } from 'navigation';
+import Details from '~screens/Details';
 import Home from '~screens/home';
 import Search from '~screens/search';
 import Settings from '~screens/settings';
@@ -6,7 +7,7 @@ import { fonts } from '~styles/theme';
 
 const homeNavigator = new StateNavigator([
   { key: 'home' },
-  { key: 'viewAll', trackCrumbTrail: true },
+  { key: 'details', trackCrumbTrail: true },
   { key: 'search', trackCrumbTrail: true }
 ]);
 
@@ -26,7 +27,8 @@ const tabs = [
     navigatorState: homeNavigator,
     scenes: [
       { key: 'home', component: Home },
-      { key: 'search', component: Search }
+      { key: 'search', component: Search },
+      { key: 'details', component: Details }
     ]
   },
   {

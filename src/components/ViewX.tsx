@@ -4,7 +4,7 @@ import { theme } from '~styles/theme';
 import { Theme } from '~types/common.types';
 
 interface ViewXProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   viewConfig?: ViewProps;
 }
 

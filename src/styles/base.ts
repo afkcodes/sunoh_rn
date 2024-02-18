@@ -1,4 +1,4 @@
-import { FontSize, Radius, Spacing } from '~types/common.types';
+import { Alignment, FontSize, Radius, Spacing } from '~types/common.types';
 
 const fontSizeStyle: { [key in FontSize]: number } = {
   '3xs': 6,
@@ -42,6 +42,12 @@ export const borderRadius: { [key in Radius]: number } = {
   '5xl': 18,
   '6xl': 24,
   full: 100
+};
+
+export const alignment: { [key in Alignment]: string } = {
+  center: 'center',
+  right: 'flex-end',
+  left: 'flex-start'
 };
 
 export { fontSizeStyle, spacing };

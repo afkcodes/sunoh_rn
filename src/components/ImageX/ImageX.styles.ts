@@ -53,8 +53,8 @@ const imageSize: {
     width: 256
   },
   '6xl': {
-    height: 288,
-    width: 28
+    height: 300,
+    width: 300
   },
   free: {
     height: '100%',

@@ -34,7 +34,11 @@ const TextX: React.FC<TextXProps> = (props) => {
     ...rest
   } = props;
   const styles = getStyles('dark', color, fontWeight, fontSize, rest);
-  return <Text style={styles.text}>{children}</Text>;
+  return (
+    <Text style={styles.text} {...textConfig}>
+      {children}
+    </Text>
+  );
 };
 
 export default TextX;

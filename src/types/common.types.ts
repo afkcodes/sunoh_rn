@@ -42,7 +42,8 @@ export type Color = 'primary' | 'secondary' | 'accent';
 export type FontFamilyWeight = 'regular' | 'medium' | 'semibold' | 'bold';
 export type Orientation = 'vertical' | 'horizontal';
 
-export type ButtonColors = Color | 'primary' | 'secondary' | 'outline' | 'warning' | 'danger';
+export type ButtonColors = Color | 'outline' | 'warning' | 'danger' | 'unstyled';
+export type Alignment = 'left' | 'right' | 'center';
 
 export interface Response {
   message: string;

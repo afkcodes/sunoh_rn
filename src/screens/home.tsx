@@ -1,78 +1,115 @@
 import { NavigationContext } from 'navigation-react';
-import { useContext } from 'react';
+import { Fragment, useContext } from 'react';
 import { ScrollView } from 'react-native';
-import AudioListItem from '~components/AudioListItem';
-import ButtonX from '~components/ButtonX';
-import SectionHeader from '~components/SectionHeader';
-import Tile from '~components/Tile';
+import SectionContainer from '~containers/SectionContainer';
+import { HOME_CONFIG } from '~helpers/data.config';
+import useFetch from '~helpers/hooks/useFetch';
+import { musicEndpoints } from '~modules/network/music';
 
 const Home = () => {
   const { stateNavigator } = useContext(NavigationContext);
+
+  const { data, isSuccess, isError } = useFetch({
+    queryKey: ['home'],
+    queryFn: async () => await musicEndpoints.home()
+  });
+
+  const onTilePress = (item: any) => {
+    stateNavigator.navigate('details', { metaData: JSON.stringify(item) });
+  };
+
   return (
-    <ScrollView style={{ flex: 1, paddingHorizontal: 8 }}>
-      <Tile
-        data={{}}
-        config={{}}
-        styleConfig={{
-          orientation: 'vertical',
-          imageConfig: {
-            size: '2xl',
-            src: 'https://m.media-amazon.com/images/M/MV5BNGViM2M4NmUtMmNkNy00MTQ5LTk5MDYtNmNhODAzODkwOTJlXkEyXkFqcGdeQXVyMTY1NDY4NTIw._V1_.jpg',
-            fit: 'cover',
-            position: 'top',
-            alt: '',
-            shape: 'default'
-          },
-          titleSubtitleConfig: {
-            title: 'Papa Meri Jaan',
-            subTitle: 'Animal',
-            numberOfLines: 1,
-            titleFontSize: 'sm',
-            titleFontWeight: 'medium',
-            subtitleFontSize: 'xs'
-          }
-        }}
-      />
-      <ButtonX
-        textConfig={{
-          text: 'Hello Button',
-          color: 'primary',
-          fontSize: 'lg',
-          fontWeight: 'medium'
-        }}
-        styleConfig={{
-          bgColor: 'primary',
-          gutterX: 'md',
-          gutterY: 'lg',
-          radius: 'sm'
-        }}
-        type='default'
-        onPress={() => {
-          stateNavigator.navigate('search');
-        }}
-      />
-      <SectionHeader
-        headingConfig={{
-          text: 'Trending Now',
-          color: 'accent',
-          fontSize: 'md',
-          fontWeight: 'semibold'
-        }}
-        actionButtonConfig={{
-          onPress: () => {},
-          textConfig: {
-            text: 'VIEW ALL',
-            fontSize: 'xs',
-            fontWeight: 'semibold',
-            color: 'secondary'
-          },
-          styleConfig: { bgColor: 'outline', gutterX: 'sm', gutterY: 'sm', radius: 'none' },
-          type: 'default'
-        }}
-      />
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-        <AudioListItem key={item} />
-      ))}
+    <ScrollView style={{ flex: 1, paddingTop: 56 }} showsVerticalScrollIndicator={false}>
+      {isSuccess && !isError ? (
+        <Fragment>
+          {data?.data.map((item: any) => (
+            <SectionContainer
+              key={item.id}
+              containerType={item.category === 'song' ? 'audio_list' : 'tile'}
+              containerConfig={{
+                tileContainerConfig: {
+                  data: [],
+                  config: HOME_CONFIG,
+                  onPress: () => {},
+                  tileConfig: {
+                    styleConfig: {
+                      orientation: 'vertical',
+                      gutterLeft: '2xs',
+                      gutterRight: '2xs',
+                      imageStyleConfig: {
+                        shape: 'rounded_square',
+                        size: '3xl',
+                        fit: 'cover',
+                        position: 'top center'
+                      },
+                      labelStyeConfig: {
+                        numberOfLines: 1,
+                        subtitleFontSize: 'xs',
+                        subTitleFontWeight: 'medium',
+                        titleFontSize: 'sm',
+                        titleFontWeight: 'medium'
+                      }
+                    },
+                    onPress: onTilePress
+                  }
+                },
+                audioListContainerConfig: {
+                  data: item.items.slice(0, 5),
+                  config: HOME_CONFIG,
+                  audioItemConfig: {
+                    styleConfig: {
+                      orientation: 'horizontal',
+                      imageStyleConfig: {
+                        shape: 'rounded_square',
+                        size: '2xs',
+                        fit: 'cover',
+                        position: 'top center'
+                      },
+                      labelStyeConfig: {
+                        numberOfLines: 1,
+                        subtitleFontSize: 'xs',
+                        subTitleFontWeight: 'medium',
+                        titleFontSize: 'sm',
+                        titleFontWeight: 'medium'
+                      }
+                    },
+                    onPress: function (item?: any): void {
+                      throw new Error('Function not implemented.');
+                    }
+                  },
+                  onPress: function (item?: any): void {
+                    throw new Error('Function not implemented.');
+                  }
+                }
+              }}
+              headerProps={{
+                headingConfig: {
+                  text: item.title,
+                  color: 'primary',
+                  fontSize: 'lg',
+                  fontWeight: 'semibold'
+                },
+                actionButtonConfig: {
+                  styleConfig: {
+                    radius: 'full',
+                    bgColor: 'accent',
+                    gutterX: '2xs',
+                    gutterY: '2xs'
+                  },
+                  type: 'default',
+                  onPress: () => {},
+                  textConfig: {
+                    text: 'VIEW ALL',
+                    color: 'secondary',
+                    fontSize: 'xs',
+                    fontWeight: 'semibold'
+                  }
+                }
+              }}
+            />
+          ))}
+        </Fragment>
+      ) : null}
     </ScrollView>
   );
 };
